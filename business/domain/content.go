@@ -1,8 +1,10 @@
 package domain
 
-// disini isinya ada repository dan service
+//core modul nya
+
 type Content struct {
-	ID    int
-	Title string
-	Desc  string
+	ID      int
+	Title   string
+	Desc    string
+	Version int
 }
