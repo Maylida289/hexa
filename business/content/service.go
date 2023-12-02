@@ -1,4 +1,4 @@
-package domain
+package content
 
 //abstraksi untuk content nya
 // disini isinya ada repository dan service
