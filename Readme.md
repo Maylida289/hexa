@@ -1,5 +1,5 @@
-# Clean Hexagonal Architecture
-## use VIPER
+# Clean Hexagonal Architecture with VIPER
+## use PostgreSQL
 
 ### Flow Architecture 
 1. From Controller to Service
