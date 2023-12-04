@@ -1,3 +1,4 @@
+// ini adalah bagian service
 package content
 
 //abstraksi untuk content nya
@@ -6,7 +7,7 @@ package content
 //ingoing port : handle teknologi yang ada di sarver
 type Repository interface { // handle dari sisi sarver/dalem nya
 	FindContentbyID(id int) (content *Content, err error)
-	FindContent() (contents []Content, err error)
+	FindAll() (contents []Content, err error)
 	InsertContent(content Content) (err error)
 	UpdateContent(content Content, currentVersion int) (err error)
 }
@@ -36,7 +37,7 @@ func (s *service) GetContentbyID(id int) (content *Content, err error) {
 }
 
 func (s *service) GetContent() (contents []Content, err error) {
-	contents, err = s.repository.FindContent()
+	contents, err = s.repository.FindAll()
 	if err != nil {
 		return nil, err
 	}
