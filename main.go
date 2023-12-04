@@ -8,12 +8,17 @@ import (
 	"os/signal"
 
 	"hexa/config"
+	"hexa/util"
+
 	// "github.com/cloudinary/cloudinary-go/config"
 	"github.com/labstack/echo/v4"
 )
 
 func main() {
 	config := config.GetConfig()
+
+	dbCon := util.NewConnectionDatabase(config)
+	defer dbCon.CloseConnection()
 
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
