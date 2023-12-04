@@ -8,6 +8,6 @@ import (
 )
 
 func RepositoryFactory(dbCon *util.DatabaseConnection) (contentRepo content.Repository) {
-
-	return
+	contentRepo = NewPostgresRepository(dbCon.Postgres)
+	return contentRepo
 }
