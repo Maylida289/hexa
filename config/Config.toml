@@ -2,4 +2,4 @@
 port = 5009
 
 [database]
-dburl = ""
+dburl = "postgres://postgres:mayadmin@localhost:5432/blog"
