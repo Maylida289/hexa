@@ -7,7 +7,7 @@ import (
 	// "google.golang.org/api/content/v2"
 )
 
-func RepositoryFactory(dbCon *util.DatabaseConnection) (contentRepo content.Repository) {
-	contentRepo = NewPostgresRepository(dbCon.Postgres)
+func RepositoryFactory(dbCon *util.DatabaseConnection) content.Repository {
+	contentRepo := NewPostgresRepository(dbCon.Postgres)
 	return contentRepo
 }

@@ -4,17 +4,17 @@
 package content
 
 import (
-	"hexa/business/content"
+	contentBusiness "hexa/business/content"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
 type Controller struct { //menginisialisasi nya menggunakan type struct
-	service content.Service
+	service contentBusiness.Service
 }
 
-func NewController(service content.Service) *Controller {
+func NewController(service contentBusiness.Service) *Controller {
 	return &Controller{
 		service: service,
 	}
