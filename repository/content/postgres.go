@@ -9,11 +9,11 @@ import (
 
 // import "firebase.google.com/go/v4/db"
 
-type PostgresRepository struct {
+type PostgresRepository struct { //parents dependency
 	db *gorm.DB
 }
 
-func NewPostgresRepository(db *gorm.DB) *PostgresRepository {
+func NewPostgresRepository(db *gorm.DB) *PostgresRepository { //func dependency injection
 	return &PostgresRepository{
 		db: db,
 	}
