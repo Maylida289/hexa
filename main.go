@@ -7,6 +7,8 @@ import (
 	"os"
 	"os/signal"
 
+	"hexa/api"
+	"hexa/app/modules"
 	"hexa/config"
 	"hexa/util"
 
@@ -20,11 +22,14 @@ func main() {
 	dbCon := util.NewConnectionDatabase(config)
 	defer dbCon.CloseConnection()
 
+	controllers := modules.RegisterModules(dbCon)
+
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Welcome!")
+		return c.String(http.StatusOK, "Congrats! Successful..")
 	})
 
+	api.RegistrationPath(e, controllers)
 	go func() {
 		address := fmt.Sprintf(":%d", config.App.Port)
 		if err := e.Start(address); err != nil {
