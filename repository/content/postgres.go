@@ -21,15 +21,15 @@ func NewPostgresRepository(db *gorm.DB) *PostgresRepository { //func dependency 
 
 //bikin func seperti service untuk pengembalian si PostgreRepository
 func (repo *PostgresRepository) FindContentbyID(id int) (content *content.Content, err error) {
-	result := repo.db.Where("id=?", id).First(&content)
-	if result.Error != nil {
-		return nil, result.Error
-	}
 	return content, nil
 }
 
 func (repo *PostgresRepository) FindAll() (contents []content.Content, err error) {
-	return
+	result := repo.db.Find(&contents)
+	if result.Error != nil {
+		return nil, result.Error
+	}
+	return contents, nil
 }
 
 func (repo *PostgresRepository) InsertContent(content content.Content) (err error) {
