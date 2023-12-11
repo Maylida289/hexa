@@ -1,5 +1,5 @@
 [app]
-port = 5009
+port = 5011
 
 [database]
-dburl = "postgres://postgres:mayadmin@localhost:5432/blog"
+dburl = "postgres://postgres:mayadmin@localhost:5432/hexa"
