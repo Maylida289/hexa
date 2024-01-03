@@ -20,7 +20,7 @@ func main() {
 	config := config.GetConfig()
 
 	dbCon := util.NewConnectionDatabase(config)
-	defer dbCon.CloseConnection()
+	// defer dbCon.CloseConnection()
 
 	controllers := modules.RegisterModules(dbCon)
 
