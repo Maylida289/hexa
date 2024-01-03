@@ -39,3 +39,7 @@ func (repo *PostgresRepository) InsertContent(content content.Content) (err erro
 func (repo *PostgresRepository) UpdateContent(content content.Content, currentVersion int) (err error) {
 	return
 }
+
+// func (repo *PostgresRepository) FindAll() (contents []content.Content, err error) {
+// 	return
+// }

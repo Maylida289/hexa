@@ -31,7 +31,7 @@ func GetConfig() *AppConfig {
 
 func initConfig() *AppConfig {
 	var defaultConfig AppConfig
-	defaultConfig.App.Port = 5006
+	defaultConfig.App.Port = 5009
 
 	viper.SetConfigName("Config")
 	viper.SetConfigType("toml")

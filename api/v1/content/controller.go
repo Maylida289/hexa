@@ -21,14 +21,14 @@ func NewController(service contentBusiness.Service) *Controller {
 }
 
 // func (controller *Controller) GetContentbyID(id int) error {
-// 	return Controller.service.GetContentbyID(id)
+// 	return controller.service.GetContentbyID(id)
 // }
 
 func (controller *Controller) GetAll(c echo.Context) error {
 	contents, err := controller.service.GetContent()
 
 	if err != nil {
-		return c.JSON(http.StatusInternalServerError, err)
+		return c.JSON(http.StatusInternalServerError, map[string]string{"error": "Failed bro"})
 	}
 	return c.JSON(http.StatusOK, contents)
 }

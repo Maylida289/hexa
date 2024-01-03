@@ -4,8 +4,8 @@ package content
 //core modul nya
 
 type Content struct {
-	ID      int
-	Title   string
-	Desc    string
-	Version int
+	ID          int
+	Name        string
+	Description string
+	Version     int
 }

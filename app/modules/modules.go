@@ -7,13 +7,13 @@ import (
 
 	// "github.com/swaggo/swag/example/basic/api"
 	contentController "hexa/api/v1/content"
-	contentService "hexa/business/content"
+	contentservice "hexa/business/content"
 	contentRepo "hexa/repository/content"
 )
 
 func RegisterModules(dbCon *util.DatabaseConnection) api.Controller {
 	contentPermitRepository := contentRepo.RepositoryFactory(dbCon)
-	contentPermitService := contentService.NewService(contentPermitRepository)
+	contentPermitService := contentservice.NewService(contentPermitRepository)
 	contentPermitController := contentController.NewController(contentPermitService)
 
 	controllers := api.Controller{
